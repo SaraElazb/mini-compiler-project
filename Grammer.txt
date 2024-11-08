@@ -1,0 +1,25 @@
+<program> ::= <statement> | <statement-list>;
+
+<statement-list> ::= <statement> | <statement> <statement-list>;
+
+<statement> ::= <declaration> | <assignment> | <if-statement> | <while-statement> | <expression>;
+
+<declaration> ::= 'int' <identifier> ';' | 'float' <identifier> ';'|'string' <identifier> ';' | 'char' <identifier> ';' | 'bool' <identifier> ';' ;
+
+<assignment> ::= <identifier> '=' <expression> ';';
+
+<if-statement> ::= 'if' '(' <condition> ')' '{' <program> '}' ['else' '{' <program> '}'];
+
+<while-statement> ::= 'while' '(' <condition> ')' '{' <program> '}';
+
+<condition> ::= <expression> <comparisonOperator> <expression>;
+
+<comparisonOperator> ::= > | < | >= | <= | == | != ;
+
+<expression> ::= <term> | '(' <expression> ')' | <term> '+' <expression> | <term> '-' <expression> | <term> '*' <expression> | <term> '/' <expression>  ;
+
+<term> ::= <number> | <identifier>;
+
+<number> ::= [0-9]+;  
+
+<identifier> ::= [a-zA-Z_][a-zA-Z0-9_];
