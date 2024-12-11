@@ -76,7 +76,7 @@ Check out the demo [here](https://drive.google.com/file/d/1NLp5jU7Lzv2S72DuUMV6Y
 4. 📬 Submit a pull request.
 
 ## 👩🏻‍💻 Team members
-- Amira Alagha
+- [Amira Alagha](https://github.com/amira-algha)
 - [Sara Elazb](https://github.com/SaraElazb)
 - [Sara Elshaer](https://github.com/saraelshaer) 
 
