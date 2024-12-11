@@ -1,0 +1,60 @@
+GRAMMAR = {
+    "program": [["statement"], ["statement", "statement-list"]],
+    "statement-list": [["statement"], ["statement", "statement-list"]],
+    "statement": [
+        ["declaration"],
+        ["assignment"],
+        ["if-statement"],
+        ["while-statement"],
+        ["for-statement"],
+        ["function-declaration"],
+        ["function-call"],
+        ["return-statement"],
+        ["expression"],
+    ],
+    "declaration": [
+        ["data-type", "identifier", ";"]
+    ],
+    "data-type": [["int"], ["float"], ["double"], ["string"], ["char"], ["bool"]],
+    "assignment": [["identifier", "=", "expression", ";"]],
+    "if-statement": [
+        ["if", "(", "condition", ")", "{", "program", "}", "else", "{", "program", "}"],
+        ["if", "(", "condition", ")", "{", "program", "}"],
+    ],
+    "while-statement": [["while", "(", "condition", ")", "{", "program", "}"]],
+    "for-statement": [
+        ["for", "(", "assignment", "condition", ";", "expression", ")", "{", "program", "}"],
+    ],
+    "function-declaration": [
+        ["function", "identifier", "(", "parameter-list", ")", "{", "program", "}"],
+    ],
+    "parameter-list": [
+        ["parameter"],
+        ["parameter", ",", "parameter-list"],
+        [""],
+    ],
+    "parameter": [["type", "identifier"]],
+    "return-statement": [["return", "expression", ";"]],
+    "condition": [["expression", "comparisonOperator", "expression"]],
+    "comparisonOperator": [[">"], ["<"], [">="], ["<="], ["=="], ["!="]],
+    "expression": [
+        ["term"],
+        ["(", "expression", ")"],
+        ["term", "+", "expression"],
+        ["term", "-", "expression"],
+        ["term", "*", "expression"],
+        ["term", "/", "expression"],
+        ["expression", "&&", "expression"],
+        ["expression", "||", "expression"],
+    ],
+    "term": [["number"], ["identifier"], ["function-call"]],
+    "function-call": [["identifier", "(", "argument-list", ")"]],
+    "argument-list": [
+        ["expression"],
+        ["expression", ",", "argument-list"],
+        [""],
+    ],
+    "number": [["[0-9]+"]],
+    "identifier": [["[a-zA-Z_][a-zA-Z0-9_]*"]],
+    "type": [["int"], ["float"], ["string"], ["char"], ["bool"], ["void"]],
+}
